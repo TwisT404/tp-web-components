@@ -4,6 +4,7 @@
 <head>
   <script src="current-time.js"></script>
   <script src="screen-size.js"></script>
+  <script src="custom-details.js"></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
@@ -15,6 +16,13 @@
   <current-time format="utc"></current-time>
 
   <screen-size></screen-size>
+  <template id="custom-details">
+    <details>
+        <summary>Cliquez pour ouvrir</summary>
+        <div>Je suis le contenu détaillé</div>
+    </details>
+  </template>
+  <custom-details></custom-details>
 </body>
 
 </html>
