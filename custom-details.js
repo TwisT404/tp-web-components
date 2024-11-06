@@ -19,13 +19,21 @@ class CustomDetails extends HTMLElement {
 
         details.addEventListener("mouseover", (event)=> {
             details.toggleAttribute("open");
-            
         });
 
         details.addEventListener("focusin", (event)=> {
             details.toggleAttribute("open");
             console.log('bojour');
         });
+
+        //---------------------- Exo Slot-------------//
+        template.innerHTML = `
+        <style>
+            template{
+                
+            }
+        </style>
+        `;
 
 
         

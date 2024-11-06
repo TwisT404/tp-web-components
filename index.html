@@ -21,8 +21,20 @@
         <summary>Cliquez pour ouvrir</summary>
         <div>Je suis le contenu détaillé</div>
     </details>
+    <slot name="summary"></slot>
+    <slot name="content"></slot>
+
   </template>
-  <custom-details></custom-details>
+
+  <custom-details>
+    <span slot="summary">Les 3 technologies des Web Components</span>
+    <span slot="content">
+        <ul>
+            <li>Contenu détaillé</li>
+        </ul>
+    </span>
+  </custom-details>
+
 </body>
 
 </html>
