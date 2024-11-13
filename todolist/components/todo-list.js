@@ -9,15 +9,19 @@ customElements.define("todo-list", class extends HTMLElement {
     this.shadowRoot.innerHTML = `<ul></ul>`
 
     this.$list = this.shadowRoot.querySelector("ul");
+    this.init();
 
-    // Créer une copie locale du tableau des todos
-    this.localTodos = new Array(...todoStore.getAll());
+  }
 
-    // Pour chaque todo du store, l'ajouter à la liste (rendu initial)
-    todoStore.getAll().forEach(todo => this.showTodo(todo));
+  async init(){
+        // Créer une copie locale du tableau des todos
+        this.localTodos = new Array(...(await todoStore.getAll()));
 
-    // Mettre à jour la liste quand le store publie une mise à jour
-    this.unsubscribe = todoStore.subscribe((todos) => this.update(todos));
+        // Pour chaque todo du store, l'ajouter à la liste (rendu initial)
+        this.localTodos.forEach(todo => this.showTodo(todo));
+    
+        // Mettre à jour la liste quand le store publie une mise à jour
+        this.unsubscribe = todoStore.subscribe((todos) => this.update(todos));
   }
 
   disconnectedCallback() {
@@ -37,7 +41,7 @@ customElements.define("todo-list", class extends HTMLElement {
 
   // Mettre à jour l'affichage en fonction des mises à jour
   update(updatedTodos) {
-
+    console.log(updatedTodos);
     // Ajouter les nouvelles todos qui ne sont pas encore affichées
     updatedTodos.forEach(updatedTodo => {
       if (!this.localTodos.find(localTodo => localTodo.id === updatedTodo.id)) {
