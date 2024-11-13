@@ -16,7 +16,6 @@
   <current-time format="utc"></current-time>
 
   <screen-size></screen-size>
-<<<<<<< HEAD
   <template id="custom-details">
     <details>
         <summary>Cliquez pour ouvrir</summary>
@@ -25,49 +24,10 @@
     <slot name="summary"></slot>
     <slot name="content"></slot>
 
-=======
-
-  <template id="custom-details">
-    <style>
-      details {
-        background: lightpink;
-        padding: 1rem;
-        border: 0.125rem solid black;
-      }
-
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-      }
-
-      details[open]>div {
-        animation: fadeIn 0.3s;
-      }
-
-      ::slotted(ul) {
-        list-style: none;
-        padding-left: 0;
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-    </style>
-
-    <details>
-      <summary>
-        <slot name="summary"></slot>
-      </summary>
-      <div>
-        <slot name="content"></slot>
-      </div>
-    </details>
->>>>>>> ee9cd2edcbd98fc8a9ba8ca0441f8fad06e3d1b8
   </template>
 
   <custom-details>
     <span slot="summary">Les 3 technologies des Web Components</span>
-<<<<<<< HEAD
     <span slot="content">
         <ul>
             <li>Contenu détaillé</li>
@@ -75,14 +35,6 @@
     </span>
   </custom-details>
 
-=======
-    <ul slot="content">
-      <li>Custom Elements</li>
-      <li>Shadow DOM</li>
-      <li>Templates et slots</li>
-    </ul>
-  </custom-details>
->>>>>>> ee9cd2edcbd98fc8a9ba8ca0441f8fad06e3d1b8
 </body>
 
 </html>
